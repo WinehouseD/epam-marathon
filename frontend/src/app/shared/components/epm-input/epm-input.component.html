@@ -1,0 +1,34 @@
+<label
+  #wrapper
+  class="epm-input__wrapper"
+  [attr.data-placeholder]="labelPlaceholder"
+  [ngClass]="{
+    'nested-icon-input': iconName,
+    filled: epmInput.value || epmInput.placeholder,
+    'label-password': type === inputTypes.Password,
+    'chat-input': epmInput.placeholder === inputPlaceholders.Chat,
+    masked: maskConfig,
+    masked__filled: maskConfig && epmInput.value
+  }"
+>
+  <input
+    #epmInput
+    class="epm-input"
+    autocomplete="off"
+    [type]="type"
+    [name]="control"
+    [placeholder]="inputPlaceholder || maskPlaceholder"
+    [formControl]="control"
+  />
+  @if (type === inputTypes.Password) {
+  <button class="epm-input__toggle-visibility" type="button" (click)="onToggleClick(epmInput.type)">
+    <img
+      ngSrc="/assets/icons/password-{{ epmInput.type === inputTypes.Password ? 'hidden' : 'visible' }}.svg"
+      class="epm-input__toggle-visibility--icon"
+      width="24"
+      height="24"
+      alt="Toggle password visibility icon"
+    />
+  </button>
+  }
+</label>

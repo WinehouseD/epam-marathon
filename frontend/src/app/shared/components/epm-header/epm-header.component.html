@@ -1,0 +1,34 @@
+<div class="container" [ngClass]="{ colored: headerSettings().colored, shadow: shouldAddShadow }">
+  @if (headerSettings().leftButton) {
+  <epm-navigation-icon [iconType]="headerSettings().leftButton!" (back)="back()" />
+  }
+  <h2 class="title">{{ headerSettings().title }}</h2>
+  @if (currentUser()) { @switch (headerSettings().right) { @case (headerRightBlock.StatusBar) {
+  <div class="statusBar">
+    <div class="message" [ngClass]="{ new: newMessage() }" [routerLink]="chatLink" [routerLinkActive]="'selected'">
+      <svg class="icon">
+        <use [attr.xlink:href]="'/assets/icons/sprite.svg#chat'"></use>
+      </svg>
+    </div>
+    <button #settings class="avatar-wrapper" [ngClass]="{ selected: isContextMenuOpen }" (click)="onSettingsClick()">
+      <img class="avatar" width="24" height="24" [src]="currentUser()!.avatar | setUserAvatar" alt="user avatar" />
+      @if (isContextMenuOpen) {
+      <epm-header-context-menu (logout)="onLogoutClick()" />
+      }
+    </button>
+  </div>
+
+  } @case (headerRightBlock.Skip) {
+
+  <epm-button [class]="buttonThemes.Link">Skip</epm-button>
+
+  } @case (headerRightBlock.Close) {
+
+  <epm-navigation-icon class="button__right" [iconType]="headerSettings().right!" (click)="navigateToMain()" />
+
+  } } } @else if (headerSettings().right === 'close') {
+  <epm-navigation-icon class="button__right" [iconType]="headerSettings().right!" (click)="navigateToMain()" />
+  } @else {
+  <a class="button-link small button__right" [routerLink]="loginLink">Log in</a>
+  }
+</div>

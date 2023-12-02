@@ -1,0 +1,14 @@
+<button
+  class="button"
+  [type]="type"
+  [ngStyle]="additionalStyles"
+  [disabled]="isDisabled"
+  [ngClass]="{ hidden: isHidden }"
+>
+  @if (iconName) {
+  <svg class="icon">
+    <use [attr.xlink:href]="'/assets/icons/sprite.svg#' + iconName"></use>
+  </svg>
+  }
+  <ng-content></ng-content>
+</button>

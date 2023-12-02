@@ -1,0 +1,43 @@
+<div class="chat__wrapper">
+  <ul class="chat__list">
+    <!-- TODO add logic to show it if websocket messaging that user tipes -->
+    @if (true) {
+    <li class="chat__list__element time__hidden">
+      <div class="message__wrapper">
+        <div class="avatar__wrapper"></div>
+        <epm-chat-message [message]="true" />
+      </div>
+    </li>
+    } @for (msg of messages; track trackByMessageId(i, msg); let i = $index) {
+
+    <li
+      class="chat__list__element"
+      [ngClass]="{ time__hidden: (msg | toggleDisplayMessageTime: messages : i), own: msg.sender !== userId }"
+    >
+      <div class="message__wrapper">
+        <div class="avatar__wrapper">
+          <a class="avatar__link" (click)="onOpenUser()">
+            <img width="24" height="24" [src]="interlocutor.avatar | setUserAvatar" alt="avatar of the interlocutor" />
+          </a>
+        </div>
+        <epm-chat-message [ngClass]="{ own: msg.sender !== userId }" [message]="msg" />
+      </div>
+      <span class="time">{{ msg.time | date: 'h:mm' }}</span>
+    </li>
+    @if (msg | toggleDisplayChatStartDay: messages : i) {
+    <span class="chat__start-day">
+      {{ msg.time | chatStartDay: 'LLLL d' }}
+    </span>
+    } }
+  </ul>
+</div>
+<form class="chat__form" [formGroup]="chatForm">
+  <epm-input #messageInput class="chat__form_input" [inputPlaceholder]="inputPlaceholders.Chat" [control]="message" />
+  <epm-button
+    type="submit"
+    class="chat__form_button"
+    [class]="[buttonThemes.IconOnly, buttonThemes.Small]"
+    [iconName]="iconNames.SendMessage"
+    (click)="onSend()"
+  />
+</form>

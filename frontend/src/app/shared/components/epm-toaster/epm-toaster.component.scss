@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  display: block;
+  max-height: 200px;
+  background-color: $color-white;
+  overflow: hidden;
+  transition: max-height $transition-duration;
+
+  &.hidden {
+    max-height: 0;
+    border: none;
+    transition: max-height $transition-duration;
+  }
+}
+
+.toaster {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    line-height: 20px;
+    border-bottom: 1px solid $color-link;
+
+    &::before {
+      content: url('/assets/icons/info.svg');
+      position: absolute;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__title {
+    @include font-semibold;
+    padding: 0 36px;
+    font-size: $font-size-regular;
+    color: $color-dark-grey;
+  }
+
+  &__description {
+    @include font-medium;
+    padding: 0 36px;
+    font-size: $font-size-body;
+    color: $color-text-secondary;
+  }
+
+  &__toaster-link {
+    color: $color-link;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 14px;
+    width: 24px;
+    height: 24px;
+  }
+}

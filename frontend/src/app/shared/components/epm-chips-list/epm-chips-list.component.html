@@ -1,0 +1,12 @@
+<ul class="chips__list">
+  @for (chips of interestChipsNames; track chips) {
+  <li>
+    <epm-chips
+      [chips]="chips"
+      [isEditable]="true"
+      [isActive]="chips | isPrimitiveInArray: interests"
+      (editChipsStatus)="onStatusChange(chips)"
+    />
+  </li>
+  }
+</ul>

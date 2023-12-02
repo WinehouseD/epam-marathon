@@ -1,0 +1,13 @@
+@switch (iconType) { @case (headerIconType.Logo) {
+<a routerLink="/main/contact">
+  <img class="logo" src="/assets/icons/logo.svg" height="24" width="24" alt="logo" />
+</a>
+} @case (headerIconType.Arrow) {
+<button (click)="onBack()">
+  <img src="/assets/icons/arrow.svg" height="24" width="24" alt="navigate to previous page" />
+</button>
+} @case (headerIconType.Close) {
+<a routerLink="/">
+  <img src="/assets/icons/close.svg" height="24" width="24" alt="navigate to previous page" />
+</a>
+} }

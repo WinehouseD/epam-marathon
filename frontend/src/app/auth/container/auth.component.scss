@@ -1,0 +1,7 @@
+@import 'variables';
+
+:host {
+  display: block;
+  background-color: $color-white;
+  min-height: calc(100vh - $header-height);
+}

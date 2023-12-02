@@ -1,0 +1,7 @@
+<div class="to-top" [ngClass]="{ show: showScrollButton }">
+  <epm-button
+    [class]="[buttonThemes.Primary, buttonThemes.IconOnly, buttonThemes.Rounded]"
+    [iconName]="iconNames.Arrow"
+    (click)="scrollToTop()"
+  />
+</div>

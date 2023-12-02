@@ -1,0 +1,49 @@
+@import 'variables';
+
+.container {
+  padding: 0 16px;
+}
+
+svg {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  stroke: $color-dark-grey;
+}
+
+.button-link {
+  display: inline-block;
+  width: 100%;
+  padding: 16px 48px;
+  line-height: 20px;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-button-primary;
+  border-radius: 8px;
+
+  &.small {
+    width: auto;
+    padding: 10px 16px;
+  }
+
+  &:active {
+    background-color: $color-button-primary-pressed;
+  }
+
+  &.link-secondary {
+    color: $color-button-primary;
+    background-color: $color-white;
+    border: 1px solid $color-button-primary;
+
+    &:active {
+      color: $color-button-primary-pressed;
+      border-color: $color-button-primary-pressed;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

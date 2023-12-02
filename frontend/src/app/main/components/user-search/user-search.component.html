@@ -1,0 +1,34 @@
+<div class="container wrapper" [ngClass]="{ bottom: !chipsList().length, scrolled: isScrolled }">
+  <div class="controls">
+    <label class="controls__search-label">
+      <input
+        [formControl]="searchByNameControl"
+        class="controls__search-input"
+        placeholder="Search by name"
+        name="search"
+        autocomplete="off"
+        [type]="inputType.Text"
+      />
+      <epm-button
+        [class]="[buttonThemes.Link, buttonThemes.Small, buttonThemes.IconOnly, 'clear_btn']"
+        [iconName]="iconNames.Close"
+        [isHidden]="!searchByNameControl.value.length"
+        (click)="clearSearch()"
+      />
+    </label>
+    <epm-button
+      class="icon-only secondary small"
+      [ngClass]="{ 'chips-counter': chipsList().length }"
+      [iconName]="iconName.Filter"
+      (click)="openFiltersModal()"
+    />
+  </div>
+  @if (chipsList().length) {
+  <div class="chips" [ngClass]="{ scrolled: isScrolled }">
+    @for (chips of chipsList(); track chips) {
+    <epm-chips [chips]="chips" [isActive]="true" [isEditable]="true" (editChipsStatus)="editChipsStatus($event)" />
+    }
+  </div>
+  }
+</div>
+<epm-filter />

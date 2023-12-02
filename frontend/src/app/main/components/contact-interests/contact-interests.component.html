@@ -1,0 +1,16 @@
+<h2 class="title">Interests</h2>
+@if (interests.length) {
+
+<ul class="interests-list">
+  @for (chips of interests; track chips) {
+  <li>
+    <epm-chips [chips]="chips" [isActive]="true" />
+  </li>
+  }
+</ul>
+
+} @else {
+
+<epm-contact-edit-profile-link />
+
+}

@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  position: absolute;
+  top: 58px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  background-color: $color-white;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 4px $color-shadow-settings;
+}
+
+.settings-item {
+  @include font-regular;
+  position: relative;
+  padding: 8px 8px 8px 40px;
+  font-size: $font-size-regular;
+  line-height: 20px;
+  text-align: start;
+  color: $color-dark-grey;
+
+  &:first-child {
+    padding-top: 16px;
+  }
+
+  &:last-child {
+    padding-bottom: 16px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &.icon-profile::before {
+    top: 18px;
+    background-image: url('/assets/icons/person.svg');
+  }
+
+  &.icon-settings::before {
+    background-image: url('/assets/icons/gear.svg');
+  }
+
+  &.icon-logout::before {
+    background-image: url('/assets/icons/arrow-out.svg');
+  }
+}

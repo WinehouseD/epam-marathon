@@ -1,0 +1,16 @@
+<image-cropper
+  format="png"
+  [imageChangedEvent]="imageChangedEvent()"
+  [maintainAspectRatio]="true"
+  [aspectRatio]="1"
+  [roundCropper]="true"
+  [cropperMaxWidth]="600"
+  [cropperMaxHeight]="600"
+  [hideResizeSquares]="false"
+  [(transform)]="transform"
+  [allowMoveImage]="true"
+  (imageCropped)="imageCropped($event)"
+/>
+<epm-button class="primary" (click)="onSavePhoto()" [isDisabled]="!imageChangedEvent().target">Save</epm-button>
+<input #fileInput type="file" accept=".png, .jpg, .jpeg" (change)="fileChangeEvent($event)" />
+<epm-button class="secondary" (click)="onChangePhoto()">Change photo</epm-button>

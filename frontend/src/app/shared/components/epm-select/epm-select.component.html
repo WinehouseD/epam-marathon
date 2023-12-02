@@ -1,0 +1,25 @@
+<label
+  [for]="placeholder"
+  class="select__label"
+  [attr.data-placeholder]="placeholder"
+  [ngClass]="{ filled: !!control.value, disabled: disabled }"
+>
+  <ng-select
+    #selectRef
+    class="select"
+    [labelForId]="placeholder"
+    [items]="filteredDropdownList"
+    [ngClass]="customClassName"
+    [formControl]="control"
+    [multiple]="multiple"
+    [editableSearchTerm]="editableSearchTerm"
+    [closeOnSelect]="closeOnSelect"
+    [searchable]="searchable"
+    [clearable]="clearable"
+    [virtualScroll]="virtualScroll"
+    [readonly]="disabled"
+    (open)="onOpen()"
+    (search)="onSearchSelect($event)"
+    (change)="onChange($event)"
+  />
+</label>

@@ -1,0 +1,17 @@
+<label class="epm-input__wrapper" [attr.data-placeholder]="labelPlaceholder" [ngClass]="{ filled: epmInput.value }">
+  <input
+    #epmInput
+    class="epm-input"
+    autocomplete="off"
+    type="text"
+    [name]="control"
+    [formControl]="control"
+    [matAutocomplete]="auto"
+    matAutocompleteOrigin
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    @for (street of optionsList; track street) {
+    <mat-option [value]="street">{{ street }}</mat-option>
+    }
+  </mat-autocomplete></label
+>

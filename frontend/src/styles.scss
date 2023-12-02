@@ -1,0 +1,44 @@
+@use '@angular/material' as mat;
+@include mat.core();
+$social_network-primary: mat.define-palette(mat.$indigo-palette);
+$social_network-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$social_network-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $social_network-primary,
+      accent: $social_network-accent
+    )
+  )
+);
+@include mat.all-component-themes($social_network-theme);
+
+@import 'fonts';
+@import 'styles/variables';
+@import 'styles/reset';
+@import 'styles/mixins';
+@import 'styles/styles';
+
+body {
+  @include font-medium;
+  background-color: $color-message-border;
+}
+
+html {
+  height: 100%;
+  min-height: 100%;
+  display: block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

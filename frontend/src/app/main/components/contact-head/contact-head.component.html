@@ -1,0 +1,26 @@
+<div class="avatar__container">
+  <div class="avatar__wrapper">
+    <img width="48" height="48" [src]="user.avatar | setUserAvatar" alt="user avatar" />
+  </div>
+  @if (editableAvatar) {
+  <epm-button
+    class="avatar__edit"
+    [class]="[buttonThemes.Primary, buttonThemes.IconOnly, buttonThemes.Small]"
+    [iconName]="iconNames.Edit"
+    (click)="onAvatarEdit()"
+  />
+  }
+</div>
+<h1 class="name">{{ user.name }}</h1>
+@if (!(user.privacy.account || user.privacy.location)) {
+<p class="location">{{ user.location || 'Unknown location' }}</p>
+}
+<ul class="social-list">
+  @for (social of user.socialMedia; track trackByPriority($index, social)) { @if (social.link) {
+  <li class="social-list__item">
+    <a (click)="onSocialClick($event, social.link, social.type)">
+      <epm-svg-icon [svgIconName]="social.type" />
+    </a>
+  </li>
+  } }
+</ul>

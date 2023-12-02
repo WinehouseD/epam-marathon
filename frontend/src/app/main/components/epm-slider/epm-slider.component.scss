@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'mixins';
+
+.slider {
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    width: 56px;
+    height: 40px;
+    padding: 10px 0 10px 12px;
+    font-size: $font-size-regular;
+    line-height: 20px;
+    color: $color-text-secondary;
+    border: solid 1px $color-grey;
+    border-radius: 8px;
+
+    &:focus {
+      outline: none;
+      border-color: $color-input-focused;
+      box-shadow: 0 0 0 1px $color-input-focused;
+    }
+  }
+
+  &::ng-deep {
+    --mat-mdc-slider-hover-ripple-color: transparent;
+    --mat-mdc-slider-focus-ripple-color: transparent;
+    --mdc-slider-focus-handle-color: #6168e4;
+    --mdc-slider-hover-handle-color: #6168e4;
+    width: 272px;
+
+    .mdc-slider__track--inactive {
+      background-color: $color-lighter-grey;
+      opacity: 1;
+    }
+
+    .mdc-slider__track--active {
+      top: 0;
+      height: 4px;
+
+      &_fill {
+        border-color: $color-primary-highlight;
+      }
+    }
+
+    .mdc-slider__thumb-knob {
+      width: 24px;
+      height: 24px;
+      border-width: 12px;
+      border-color: $color-primary-highlight;
+      box-shadow: none;
+    }
+  }
+}

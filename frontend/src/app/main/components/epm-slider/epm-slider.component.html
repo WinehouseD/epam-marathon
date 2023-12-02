@@ -1,0 +1,24 @@
+<div class="slider__inputs">
+  <input
+    class="slider__input"
+    type="number"
+    name="start-age"
+    [min]="ageRange.minAge"
+    [max]="ageRange.maxAge"
+    [(ngModel)]="selectedMin"
+    (ngModelChange)="onInputChange()"
+  />
+  <input
+    class="slider__input"
+    type="number"
+    name="end-age"
+    [min]="ageRange.minAge"
+    [max]="ageRange.maxAge"
+    [(ngModel)]="selectedMax"
+    (ngModelChange)="onInputChange()"
+  />
+</div>
+<mat-slider class="slider" [min]="ageRange.minAge" [max]="ageRange.maxAge">
+  <input matSliderStartThumb name="start-thumb" [(ngModel)]="selectedMin" (ngModelChange)="onInputChange()" />
+  <input matSliderEndThumb name="end-thumb" [(ngModel)]="selectedMax" (ngModelChange)="onInputChange()" />
+</mat-slider>

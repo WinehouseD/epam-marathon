@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  @include host-container;
+  background-color: $color-white;
+  min-height: calc(100vh - $header-height);
+
+  ::ng-deep {
+    .button {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+image-cropper {
+  --cropper-outline-color: rgba(77, 82, 103, 0.6);
+  margin-bottom: 20px;
+}
+
+input[type='file'] {
+  display: none;
+}

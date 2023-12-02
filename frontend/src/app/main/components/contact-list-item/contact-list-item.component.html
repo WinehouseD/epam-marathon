@@ -1,0 +1,35 @@
+<div class="avatar">
+  <div class="avatar__wrapper">
+    <img width="48" height="48" [src]="user.avatar | setUserAvatar" alt="user avatar" />
+  </div>
+</div>
+<div class="info">
+  <div class="info__text">
+    <b class="name">
+      <span class="no-space">{{ user.name }}</span>
+      @if (isLoggedIn() && isBirthdayVisible) {
+      <span>,</span>
+      <span>{{ user.birthday! | age }}</span>
+      }
+    </b>
+    @if (!(user.privacy.account || user.privacy.location)) {
+    <p class="location">{{ user.location || 'Unknown location' }}</p>
+    }
+  </div>
+  <ul class="social-list">
+    @for (social of user.socialMedia; track trackByPriority($index, social)) { @if (social.link) {
+    <li class="social-list__item">
+      <a (click)="onSocialClick($event, social.link, social.type)">
+        <epm-svg-icon [svgIconName]="social.type" />
+      </a>
+    </li>
+    } }
+  </ul>
+</div>
+<epm-button
+  class="message-btn"
+  [class]="[buttonThemes.Primary, buttonThemes.Small, buttonThemes.IconOnly]"
+  [iconName]="iconNames.Chat"
+  (click)="onChatClick($event)"
+/>
+<epm-modal #modal [modalConfig]="modalConfig" (primaryButton)="onPrimaryButtonClick()" />

@@ -1,0 +1,17 @@
+@if (message !== true) {
+<p class="message">
+  {{ message.text }}
+  <svg class="send-icon">
+    @if (message.read) {
+    <use [attr.xlink:href]="'/assets/icons/sprite.svg#double-checked'"></use>
+    } @else { #checked| }
+    <ng-template #checked>
+      <use [attr.xlink:href]="'/assets/icons/sprite.svg#checked'"></use>
+    </ng-template>
+  </svg>
+</p>
+} @else {
+<p class="message texting">
+  <epm-loader class="texting" [isTexting]="true" />
+</p>
+}

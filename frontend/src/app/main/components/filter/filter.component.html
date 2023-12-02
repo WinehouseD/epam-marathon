@@ -1,0 +1,35 @@
+<dialog #modal class="filter-modal">
+  <section class="filter-modal__container">
+    <button class="filter-modal__back" formmethod="dialog" (click)="closeModal()">Catalogue</button>
+    <h2 class="filter-modal__title">Filters</h2>
+    <p class="filter-modal__items-found">
+      {{ userList().length | i18nPlural: { '=1': '1 user', other: '# users' } }} found
+    </p>
+    <epm-select
+      class="filter-modal__type"
+      [control]="filterTypeControl"
+      [dropdownList]="filterTypes"
+      placeholder="Filter by"
+      [closeOnSelect]="true"
+    />
+    @if (filterTypeControl.value === EFilterType.Location) {
+    <h3 class="filter-modal__type-heading">Location</h3>
+    <epm-select
+      [control]="cityControl"
+      [dropdownList]="cityList"
+      [searchable]="true"
+      placeholder="City or village"
+      [closeOnSelect]="true"
+    />
+    } @if (filterTypeControl.value === EFilterType.Age) {
+    <h3 class="filter-modal__type-heading">Age</h3>
+    <epm-slider
+      [selectedMin]="selectedMinAge"
+      [selectedMax]="selectedMaxAge"
+      (valueChanged)="onSliderInputChange($event)"
+    />
+    }
+    <epm-button class="primary" (click)="applyFilter()" [isDisabled]="isApplyButtonDisabled">Apply</epm-button>
+    <epm-button class="secondary" (click)="closeModal()">Close</epm-button>
+  </section>
+</dialog>

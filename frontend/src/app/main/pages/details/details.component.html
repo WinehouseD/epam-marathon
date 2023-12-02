@@ -1,0 +1,23 @@
+<a class="catalogue" routerLink="../">
+  <img src="/assets/icons/chevron-blue.svg" width="16" height="16" alt="navigate to previous page" />
+  <span>Settings</span>
+</a>
+<h2 class="details__title">Account details</h2>
+<form class="details__card" [formGroup]="accountDetailsForm">
+  <div class="details__field">
+    <epm-input labelPlaceholder="Login" [type]="inputTypes.Email" [control]="email" />
+    <epm-error-message [control]="email" />
+  </div>
+  <div class="details__field">
+    <epm-input labelPlaceholder="Full Name" [control]="name" />
+    <epm-error-message [control]="name" />
+  </div>
+  <epm-button
+    class="button"
+    [class]="buttonThemes.Primary"
+    [isDisabled]="accountDetailsForm.invalid"
+    (click)="onSaveUpdates()"
+  >
+    Save updates
+  </epm-button>
+</form>

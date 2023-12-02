@@ -1,0 +1,20 @@
+@import 'variables';
+
+:host {
+  display: inline-block;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  rotate: 90deg;
+}
+
+.to-top {
+  visibility: hidden;
+  opacity: 0;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transition: all $transition-duration-fast ease-in-out;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'mixins';
+
+.empty {
+  &__text {
+    @include font-medium;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-text-secondary;
+  }
+
+  &__link {
+    color: $color-link;
+  }
+}

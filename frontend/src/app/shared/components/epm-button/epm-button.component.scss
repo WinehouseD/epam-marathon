@@ -1,0 +1,124 @@
+@import 'variables';
+@import 'mixins';
+
+:host {
+  &.icon-right > .button {
+    flex-direction: row-reverse;
+  }
+
+  &.primary > .button {
+    color: $color-white;
+    background-color: $color-button-primary;
+
+    svg {
+      stroke: $color-white;
+    }
+
+    &:enabled:active {
+      color: $color-white;
+      background-color: $color-button-primary-pressed;
+    }
+
+    &:disabled {
+      background-color: $color-button-disabled-halftone;
+    }
+  }
+
+  &.secondary > .button {
+    color: $color-button-primary;
+    border: 1px solid $color-button-primary;
+
+    svg {
+      stroke: $color-button-primary;
+    }
+
+    &:enabled:active {
+      color: $color-button-primary-pressed;
+      border-color: $color-button-primary-pressed;
+
+      svg {
+        stroke: $color-button-primary-pressed;
+      }
+    }
+
+    &:disabled {
+      border-color: $color-grey;
+    }
+  }
+
+  &.link > .button {
+    @include font-medium;
+    height: auto;
+    padding: 0;
+    color: $color-link;
+    line-height: normal;
+
+    svg {
+      stroke: $color-link;
+    }
+
+    &:enabled:active {
+      color: $color-link-pressed;
+
+      svg {
+        stroke: $color-link-pressed;
+      }
+    }
+  }
+
+  &.rounded > .button {
+    border-radius: 50%;
+  }
+
+  &.small > .button,
+  &.link > .button {
+    width: auto;
+  }
+
+  &.small > .button {
+    height: $button-size-small;
+    padding: 10px 16px;
+  }
+
+  &.icon-only > .button {
+    width: $button-size;
+    height: $button-size;
+    padding: 8px;
+  }
+
+  &.small.icon-only > .button {
+    height: $button-size-small;
+    width: $button-size-small;
+  }
+
+  .button {
+    &:disabled {
+      color: $color-grey;
+      opacity: 0.7;
+      cursor: not-allowed;
+
+      svg {
+        stroke: $color-grey;
+      }
+    }
+  }
+}
+
+.button {
+  @include font-semibold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 52px;
+  padding: 16px 48px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &.hidden {
+    display: none;
+  }
+}

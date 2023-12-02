@@ -1,0 +1,90 @@
+@import 'variables';
+@import 'mixins';
+
+.filter-modal {
+  position: fixed;
+  top: 0;
+  left: calc(50vw - $main-container-width / 2);
+  display: block;
+  width: 0;
+  height: 100%;
+  max-height: 100%;
+  border: none;
+  overflow-x: hidden;
+  transition: all $transition-duration;
+
+  &[open] {
+    width: 320px;
+    transition: all $transition-duration;
+  }
+
+  &::backdrop {
+    background-color: $color-shadow-modal;
+  }
+
+  &__container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 0 16px 32px;
+    background-color: $color-white;
+  }
+
+  &__back {
+    @include font-medium;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 24px;
+    margin: 16px 0;
+    padding-left: 28px;
+    font-size: $font-size-regular;
+    line-height: 20px;
+    color: $color-dark-grey;
+
+    &::before {
+      content: url('/assets/icons/arrow.svg');
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__title {
+    @include font-bold;
+    margin: 16px 0 4px;
+    font-size: $font-size-h2;
+    line-height: 34px;
+    color: $color-text-accent;
+  }
+
+  &__items-found {
+    @include font-regular;
+    margin-bottom: 24px;
+    font-size: $font-size-label;
+    line-height: 16px;
+    color: $color-text-secondary;
+  }
+
+  &__type {
+    margin-bottom: 32px;
+  }
+
+  &__type-heading {
+    @include font-bold;
+    margin-bottom: 16px;
+    font-size: $font-size-h3;
+    line-height: 23px;
+    color: $color-text-accent;
+  }
+}
+
+epm-button.primary {
+  margin-top: auto;
+
+  & ::ng-deep.button {
+    margin-bottom: 16px;
+  }
+}

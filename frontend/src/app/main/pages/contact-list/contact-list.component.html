@@ -1,0 +1,17 @@
+<ul epmPagination (paginate)="loadUsers()" class="contact-list">
+  @for (user of userList(); track user.email) {
+  <li class="contact-list__item">
+    <epm-contact-list-item [user]="user" (click)="onOpenUser(user.email)" />
+  </li>
+  }
+  <epm-loader />
+</ul>
+@if (!userList().length && !isLoading()) {
+<div class="empty-list__wrapper">
+  <div class="empty-list__message">
+    <h2 class="empty-list__title">No U-Pamers found</h2>
+    <h3 class="empty-list__subtitle">Try another search query or remove filters.</h3>
+  </div>
+</div>
+}
+<epm-to-top-button />
