@@ -1,0 +1,23 @@
+{
+  "Information": [
+    "gets all unread message counts per group from dynamodb"
+  ],
+  "profile": "",
+  "region": "",
+  "configuration": "Release",
+  "function-architecture": "x86_64",
+  "function-runtime": "dotnet6",
+  "function-memory-size": 256,
+  "function-timeout": 30,
+  "function-handler": "GetUnreadMessages::GetUnreadMessages.Function::FunctionHandler",
+  "framework": "net6.0",
+  "function-name": "GetUnreadMessages",
+  "function-description": "gets unread message count per chat by userid",
+  "package-type": "Zip",
+  "function-role": "",
+  "function-subnets": "",
+  "function-security-groups": "",
+  "tracing-mode": "PassThrough",
+  "environment-variables": "",
+  "image-tag": ""
+}

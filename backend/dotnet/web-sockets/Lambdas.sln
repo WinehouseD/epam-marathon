@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnConnect", "OnConnect\OnConnect.csproj", "{3D0BD234-A09A-48A1-8D96-AF5C6B3E0FE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnDisconnect", "OnDisconnect\OnDisconnect.csproj", "{157FE19B-D6C5-46A5-9EBD-501FA96324B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendMessage", "SendMessage\SendMessage.csproj", "{4C9D77B1-760F-43A2-877F-D9A500E37B45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadMessage", "ReadMessage\ReadMessage.csproj", "{9C1AD7E8-9CB0-41F4-8E36-8CD45D66373F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetAllChats", "GetAllChats\GetAllChats.csproj", "{37F4EF47-1065-4B47-929E-64CA8A88B4C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetMessages", "GetMessages\GetMessages.csproj", "{2D499FC1-A235-4D41-889A-DA430C051BE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetUnreadMessages", "GetUnreadMessages\GetUnreadMessages.csproj", "{9044A433-A2F1-43EB-9F5F-969A4078532D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D0BD234-A09A-48A1-8D96-AF5C6B3E0FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D0BD234-A09A-48A1-8D96-AF5C6B3E0FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D0BD234-A09A-48A1-8D96-AF5C6B3E0FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D0BD234-A09A-48A1-8D96-AF5C6B3E0FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157FE19B-D6C5-46A5-9EBD-501FA96324B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157FE19B-D6C5-46A5-9EBD-501FA96324B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157FE19B-D6C5-46A5-9EBD-501FA96324B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157FE19B-D6C5-46A5-9EBD-501FA96324B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9D77B1-760F-43A2-877F-D9A500E37B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9D77B1-760F-43A2-877F-D9A500E37B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9D77B1-760F-43A2-877F-D9A500E37B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9D77B1-760F-43A2-877F-D9A500E37B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C1AD7E8-9CB0-41F4-8E36-8CD45D66373F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C1AD7E8-9CB0-41F4-8E36-8CD45D66373F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C1AD7E8-9CB0-41F4-8E36-8CD45D66373F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C1AD7E8-9CB0-41F4-8E36-8CD45D66373F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F4EF47-1065-4B47-929E-64CA8A88B4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F4EF47-1065-4B47-929E-64CA8A88B4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F4EF47-1065-4B47-929E-64CA8A88B4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F4EF47-1065-4B47-929E-64CA8A88B4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D499FC1-A235-4D41-889A-DA430C051BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D499FC1-A235-4D41-889A-DA430C051BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D499FC1-A235-4D41-889A-DA430C051BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D499FC1-A235-4D41-889A-DA430C051BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9044A433-A2F1-43EB-9F5F-969A4078532D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9044A433-A2F1-43EB-9F5F-969A4078532D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9044A433-A2F1-43EB-9F5F-969A4078532D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9044A433-A2F1-43EB-9F5F-969A4078532D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AE5A166-5B19-4A60-A5D0-17E78259BB33}
+	EndGlobalSection
+EndGlobal

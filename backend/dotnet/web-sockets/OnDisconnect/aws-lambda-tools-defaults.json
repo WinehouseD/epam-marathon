@@ -1,0 +1,24 @@
+
+{
+  "Information": [
+    ".net labda that deletes socket connections when user disconnects"
+  ],
+    "profile"     : "",
+    "region"      : "",
+    "configuration" : "Release",
+    "function-architecture" : "x86_64",
+    "function-runtime"      : "dotnet6",
+    "function-memory-size"  : 256,
+    "function-timeout"      : 100,
+    "function-handler"      : "OnDisconnect::OnDisconnect.Function::FunctionHandler",
+    "framework"             : "net6.0",
+    "function-name"         : "OnDisconnect",
+    "function-description"  : "Removes ConnectedUser by connectionId from DynamoDB",
+    "package-type"          : "Zip",
+    "function-role"         : "",
+    "function-subnets"      : "",
+    "function-security-groups" : "",
+    "tracing-mode"             : "PassThrough",
+    "environment-variables"    : "",
+    "image-tag"                : ""
+}

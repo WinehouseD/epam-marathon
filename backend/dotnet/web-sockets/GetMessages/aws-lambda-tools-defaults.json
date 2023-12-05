@@ -1,0 +1,23 @@
+{
+  "Information": [
+    "gets messages for chat from dynamodb"
+  ],
+  "profile": "",
+  "region": "",
+  "configuration": "Release",
+  "function-architecture": "x86_64",
+  "function-runtime": "dotnet6",
+  "function-memory-size": 256,
+  "function-timeout": 30,
+  "function-handler": "GetMessages::GetMessages.Function::FunctionHandler",
+  "framework": "net6.0",
+  "function-name": "GetMessages",
+  "function-description": "get all messages by chat id",
+  "package-type": "Zip",
+  "function-role": "",
+  "function-subnets": "",
+  "function-security-groups": "",
+  "tracing-mode": "PassThrough",
+  "environment-variables": "",
+  "image-tag": ""
+}

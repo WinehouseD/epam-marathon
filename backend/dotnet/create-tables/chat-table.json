@@ -1,0 +1,70 @@
+{
+  "TableName": "it-marathon-v3-chat-db",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "chatId"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "updatedDt",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "user1",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "user2",
+      "AttributeType": "S"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "user1-updatedDt-index",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "user1",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "updatedDt",
+          "KeyType": "RANGE"
+        }
+      ]
+    },
+    {
+      "IndexName": "user2-updatedDt-index",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "user2",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "updatedDt",
+          "KeyType": "RANGE"
+        }
+      ]
+    }
+  ],
+  "BillingMode": "PROVISIONED",
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  }
+}

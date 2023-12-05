@@ -1,0 +1,24 @@
+
+{
+    "Information" : [
+        "Lambda that changes message status to was read"
+    ],
+    "profile"     : "",
+    "region"      : "",
+    "configuration" : "Release",
+    "function-architecture" : "x86_64",
+    "function-runtime"      : "dotnet6",
+    "function-memory-size"  : 256,
+    "function-timeout"      : 100,
+    "function-handler"      : "ReadMessage::ReadMessage.Function::FunctionHandler",
+    "framework"             : "net6.0",
+    "function-name"         : "ReadMessage",
+    "function-description"  : "Changes messages status for chat",
+    "package-type"          : "Zip",
+    "function-role"         : "",
+    "function-subnets"      : "",
+    "function-security-groups" : "",
+    "tracing-mode"             : "PassThrough",
+    "environment-variables"    : "",
+    "image-tag"                : ""
+}

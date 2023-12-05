@@ -1,0 +1,59 @@
+{
+  "TableName": "it-marathon-v3-message-db",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "id"
+    },
+    {
+      "AttributeName": "sendTime",
+      "KeyType": "RANGE"
+    }
+
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "message",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "senderId",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "receiverId",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "seen",
+      "AttributeType": "N"
+    }
+  ],
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "receiverId-seen-index",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "ReadCapacityUnits": 1,
+        "WriteCapacityUnits": 1
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "receiverId",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "seen",
+          "KeyType": "RANGE"
+        }
+      ]
+    }
+  ],
+  "BillingMode": "PROVISIONED",
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  }
+}

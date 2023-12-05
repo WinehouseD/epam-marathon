@@ -1,0 +1,24 @@
+
+{
+    "Information" : [
+        ".net lambda that adds socket connections to DynamoDB"
+    ],
+    "profile"     : "",
+    "region"      : "",
+    "configuration" : "Release",
+    "function-architecture" : "x86_64",
+    "function-runtime"      : "dotnet6",
+    "function-memory-size"  : 256,
+    "function-timeout"      : 100,
+    "function-handler"      : "OnConnect::OnConnect.Function::FunctionHandler",
+    "function-name"         : "OnConnect",
+    "framework"             : "net6.0",
+    "function-description"  : "Saves web socket connection to DynamoDB",
+    "package-type"          : "Zip",
+    "function-role"         : "",
+    "function-subnets"      : "",
+    "function-security-groups" : "",
+    "tracing-mode"             : "PassThrough",
+    "environment-variables"    : "",
+    "image-tag"                : ""
+}
